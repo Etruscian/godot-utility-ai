@@ -36,10 +36,7 @@ func score() -> float:
 func _get_configuration_warnings():
 	var warnings = []
 
-	var current_script = get_script().get_path()
-	# not sure if there is a better way to validate if script was extended
-	# instead of relying on the actual path.
-	if current_script == "res://addons/utility_ai/considerations/consideration.gd":
+	if get_script() == UtilityAiConsideration:
 		warnings.push_back("Consideration script needs to be extended and 'score' method implemented")
 
 	if curve == null:
